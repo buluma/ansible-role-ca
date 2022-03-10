@@ -4,7 +4,7 @@ Install and configure a certificate authority on your system.
 
 |GitHub|GitLab|Quality|Downloads|Version|
 |------|------|-------|---------|-------|
-|[![github](https://github.com/buluma/ansible-role-ca/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-ca/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-ca/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-ca)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/buluma/ca)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/buluma/ca)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-ca.svg)](https://github.com/buluma/ansible-role-ca/releases/)|
+|[![github](https://github.com/buluma/ansible-role-ca/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-ca/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-ca/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-ca)|[![quality](https://img.shields.io/ansible/quality/58348)](https://galaxy.ansible.com/buluma/ca)|[![downloads](https://img.shields.io/ansible/role/d/58348)](https://galaxy.ansible.com/buluma/ca)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-ca.svg)](https://github.com/buluma/ansible-role-ca/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
