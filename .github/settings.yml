@@ -4,5 +4,5 @@
 #
 repository:
   description: Install and configure a certificate authority on your system.
-  homepage: https://robertdebock.nl/
+  homepage: https://buluma.github.io/
   topics: ca, certificate, authority, openssl, ansible, molecule, tox, playbook, hacktoberfest
