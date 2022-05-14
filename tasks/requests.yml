@@ -1,6 +1,7 @@
 ---
 # issue
-- block:
+- name: issue key
+  block:
     - name: upload requested key
       ansible.builtin.copy:
         src: "{{ request.upload_keyfile }}"
