@@ -25,7 +25,7 @@
     path: "{{ ca_path }}/crlnumber"
   register: check_crlnumber
 
-- name: init crlnumber file
+- name: Init crlnumber file
   ansible.builtin.copy:
     dest: "{{ ca_path }}/crlnumber"
     content: "1000"
