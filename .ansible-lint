@@ -3,7 +3,6 @@
 # Ansible managed
 #
 exclude_paths:
-  - ./meta/exception.yml
   - ./meta/preferences.yml
   - ./molecule/default/prepare.yml
   - ./molecule/default/converge.yml
@@ -11,7 +10,11 @@ exclude_paths:
   - ./molecule/default/collections.yml
   - ./.tox
   - ./.cache
+  - ./.github
+  - ./requirements.yml
 
 skip_list:
-  - no-changed-when
-  - unnamed-task
+  - yaml[truthy]
+
+enable_list:
+  - name[prefix]
