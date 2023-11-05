@@ -2,9 +2,9 @@
 
 Install and configure a certificate authority on your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
-|------|------|-------|---------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-ca/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-ca/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-ca/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-ca)|[![quality](https://img.shields.io/ansible/quality/58348)](https://galaxy.ansible.com/buluma/ca)|[![downloads](https://img.shields.io/ansible/role/d/58348)](https://galaxy.ansible.com/buluma/ca)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-ca.svg)](https://github.com/buluma/ansible-role-ca/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-ca.svg)](https://github.com/buluma/ansible-role-ca/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-ca.svg)](https://github.com/buluma/ansible-role-ca/pulls/)|
+|GitHub|GitLab|Downloads|Version|Issues|Pull Requests|
+|------|------|-------|-------|------|-------------|
+|[![github](https://github.com/buluma/ansible-role-ca/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-ca/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-ca/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-ca)|[![downloads](https://img.shields.io/ansible/role/d/4660)](https://galaxy.ansible.com/buluma/ca)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-ca.svg)](https://github.com/buluma/ansible-role-ca/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-ca.svg)](https://github.com/buluma/ansible-role-ca/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-ca.svg)](https://github.com/buluma/ansible-role-ca/pulls/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -66,12 +66,12 @@ ca_passphrase: SuP3rS3creT
 ca_common_name: example.com
 
 # Other details for the CA.
-ca_country_name: NL
+ca_country_name: KE
 ca_email_address: me@buluma.me.ke
 ca_organization_name: Very little
 ca_organizational_unit_name: Even less
-ca_state_or_province_name: Utrecht
-ca_locality_name: Utrecht
+ca_state_or_province_name: Nairobi
+ca_locality_name: Nairobi
 
 # There are two formats to request a key and certificate:
 # 1. With details: (Includes `name:`)
@@ -98,7 +98,7 @@ ca_publication_location: "{{ httpd_data_directory | default('/tmp') }}/pub"
 # preferred locations are used (see `vars/main.yml`, under `_ca_openssl_path`.
 # If you need a CA certificate somewhere else, simple use something like this:
 # ca_openssl_path: /my/preferred/path
-ca_openssl_path: "{{ _ca_openssl_path[ansible_os_family] | default(_ca_openssl_path['default'] ) }}"
+ca_openssl_path: "{{ _ca_openssl_path[ansible_os_family] | default(_ca_openssl_path['default']) }}"
 ```
 
 ## [Requirements](#requirements)
