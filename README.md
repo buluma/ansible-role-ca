@@ -1,10 +1,10 @@
-# [Ansible role ca](#ca)
+# Ansible role [ca](https://galaxy.ansible.com/ui/standalone/roles/buluma/ca/documentation)
 
 Install and configure a certificate authority on your system.
 
-|GitHub|Version|Issues|Pull Requests|
-|------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-ca/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-ca/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-ca.svg)](https://github.com/buluma/ansible-role-ca/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-ca.svg)](https://github.com/buluma/ansible-role-ca/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-ca.svg)](https://github.com/buluma/ansible-role-ca/pulls/)|
+|GitHub|Version|Issues|Pull Requests|Downloads|
+|------|-------|------|-------------|---------|
+|[![github](https://github.com/buluma/ansible-role-ca/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-ca/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-ca.svg)](https://github.com/buluma/ansible-role-ca/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-ca.svg)](https://github.com/buluma/ansible-role-ca/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-ca.svg)](https://github.com/buluma/ansible-role-ca/pulls/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/ca)](https://galaxy.ansible.com/ui/standalone/roles/buluma/ca/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -152,13 +152,11 @@ If you find issues, please register them in [GitHub](https://github.com/buluma/a
 
 ## [License](#license)
 
-[Apache-2.0](https://github.com/buluma/ansible-role-ca/blob/master/LICENSE).
+[Apache-2.0](https://github.com/buluma/ansible-role-ca/blob/master/LICENSE)
 
 ## [Author Information](#author-information)
 
-[Michael Buluma](https://buluma.github.io/)
+[Shadow Walker](https://buluma.github.io/)
 
-
-### [Special Thanks](#special-thanks)
 
 Template inspired by [Robert de Bock](https://github.com/robertdebock)
