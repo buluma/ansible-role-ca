@@ -3,11 +3,20 @@
 # Ansible managed
 #
 
+name: Ansible Graphviz
 on:
   push:
+    branches:
+      - master
+      - main
+      - testing
     paths:
       - '.github/workflows/requirements2png.yml'
-name: Ansible Graphviz
+    paths-ignore:
+      - '**/README.md'
+      - '**/CHANGELOG.md'
+    tags_ignore:
+      - '*'
 
 jobs:
   build:
