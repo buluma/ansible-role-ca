@@ -9,12 +9,8 @@ on:
     branches:
       - master
       - main
-      - testing
     paths:
       - '.github/workflows/requirements2png.yml'
-    paths-ignore:
-      - '**/README.md'
-      - '**/CHANGELOG.md'
     tags_ignore:
       - '*'
 
