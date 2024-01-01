@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-ca/tree/HEAD)
+## [2.0.0](https://github.com/buluma/ansible-role-ca/tree/2.0.0) (2023-12-28)
 
-[Full Changelog](https://github.com/buluma/ansible-role-ca/compare/0.1.10...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-ca/compare/0.1.10...2.0.0)
 
 **Closed issues:**
 
