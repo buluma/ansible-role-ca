@@ -1,5 +1,18 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-ca/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-ca/compare/2.0.0...HEAD)
+
+**Fixed bugs:**
+
+- Credits for Robert deBock for this role [\#7](https://github.com/buluma/ansible-role-ca/issues/7)
+
+**Closed issues:**
+
+- Update action [\#16](https://github.com/buluma/ansible-role-ca/issues/16)
+- rebuild action [\#15](https://github.com/buluma/ansible-role-ca/issues/15)
+
 ## [2.0.0](https://github.com/buluma/ansible-role-ca/tree/2.0.0) (2023-12-28)
 
 [Full Changelog](https://github.com/buluma/ansible-role-ca/compare/0.1.10...2.0.0)
