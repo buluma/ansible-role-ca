@@ -9,7 +9,8 @@ on:
   push:
     # branches to consider in the event; optional, defaults to default
     branches:
-      - ${{ github.event.repository.default_branch }}
+      - master
+      - main
       - testing
     paths-ignore:
       - '**/README.md'
