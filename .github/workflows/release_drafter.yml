@@ -59,12 +59,12 @@ jobs:
       - name: Checkout current repo
         uses: actions/checkout@v4
         with:
-          path: master
+          path: ${{ github.event.repository.default_branch }}
       - name: Commit Changelog file
         run: |
           # We are cloned in the 'default' directory and the dj-wasabi-release
           # repository is the 'dj-wasabi-release' next to 'default'
-          cd master
+          cd ${{ github.event.repository.default_branch }}
           # Generate CHANGELOG.md file
           ../dj-wasabi-release/release.sh -d
           # Let commit the changes if there are any? (Well there should be!)

@@ -6,6 +6,7 @@ categories:
     labels:
       - 'feature'
       - 'enhancement'
+      - 'dependencies'
   - title: '🐛 Role Fixes'
     labels:
       - 'fix'
@@ -30,4 +31,3 @@ template: |
   ## What’s Changed
 
   $CHANGES
-  Default Branch: $BASE_REF_NAME

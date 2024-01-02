@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v4
       - name: ansible-lint
         uses: ansible-community/ansible-lint-action@main
-  molecule_test:
+  test:
     needs:
       - lint
     runs-on: ubuntu-20.04
