@@ -21,7 +21,7 @@ on:
     types: [opened, reopened, synchronize]
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
@@ -59,12 +59,12 @@ jobs:
       - name: Checkout current repo
         uses: actions/checkout@v4
         with:
-          path: ${{ github.event.repository.default_branch }}
+          path: master
       - name: Commit Changelog file
         run: |
           # We are cloned in the 'default' directory and the dj-wasabi-release
           # repository is the 'dj-wasabi-release' next to 'default'
-          cd ${{ github.event.repository.default_branch }}
+          cd master
           # Generate CHANGELOG.md file
           ../dj-wasabi-release/release.sh -d
           # Let commit the changes if there are any? (Well there should be!)
