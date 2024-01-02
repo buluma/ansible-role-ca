@@ -65,7 +65,8 @@ jobs:
       - name: Checkout Role
         uses: actions/checkout@v4
         with:
-          path: "${{ github.repository }}"      - name: Running Molecule Test
+          path: "${{ github.repository }}"
+      - name: Running Molecule Test
         uses: buluma/molecule-action@v6.0.0
         with:
           image: ${{ matrix.config.image }}
