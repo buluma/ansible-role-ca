@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-ca/tree/HEAD)
+## [2.1.0](https://github.com/buluma/ansible-role-ca/tree/2.1.0) (2024-01-03)
 
-[Full Changelog](https://github.com/buluma/ansible-role-ca/compare/2.0.0...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-ca/compare/2.0.0...2.1.0)
 
 **Fixed bugs:**
 
@@ -12,6 +12,10 @@
 
 - Update action [\#16](https://github.com/buluma/ansible-role-ca/issues/16)
 - rebuild action [\#15](https://github.com/buluma/ansible-role-ca/issues/15)
+
+**Merged pull requests:**
+
+- Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.5 to 1.0.8 [\#18](https://github.com/buluma/ansible-role-ca/pull/18) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [2.0.0](https://github.com/buluma/ansible-role-ca/tree/2.0.0) (2023-12-28)
 
