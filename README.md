@@ -17,7 +17,17 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   become: true
   gather_facts: true
 
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=true cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+
   roles:
+    - role: buluma.openssl
+      openssl_items:
+        - name: apache-httpd
+          common_name: "{{ ansible_fqdn }}"
+    - role: buluma.httpd
     - role: buluma.ca
 ```
 
@@ -35,11 +45,6 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
     - role: buluma.buildtools
     - role: buluma.epel
     - role: buluma.python_pip
-    - role: buluma.openssl
-      openssl_items:
-        - name: apache-httpd
-          common_name: "{{ ansible_fqdn }}"
-    - role: buluma.httpd
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
