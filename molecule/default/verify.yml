@@ -13,13 +13,13 @@
         - name: my_ca.example.com
           passphrase: WoNtT3L1
           cipher: aes256
-          country_name: NL
+          country_name: KE
           email_address: me@buluma.me.ke
           organization_name: Some Corporation
           organizational_unit_name: Department X
 
   post_tasks:
-    - name: check if key exists
+    - name: Check if key exists
       ansible.builtin.stat:
         path: "{{ item }}"
       loop:

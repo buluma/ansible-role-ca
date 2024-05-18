@@ -17,17 +17,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   become: true
   gather_facts: true
 
-  pre_tasks:
-    - name: Update apt cache.
-      apt: update_cache=true cache_valid_time=600
-      when: ansible_os_family == 'Debian'
-
   roles:
-    - role: buluma.openssl
-      openssl_items:
-        - name: apache-httpd
-          common_name: "{{ ansible_fqdn }}"
-    - role: buluma.httpd
     - role: buluma.ca
 ```
 
@@ -37,14 +27,19 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 ---
 - name: Prepare
   hosts: all
-  gather_facts: false
   become: true
+  gather_facts: false
 
   roles:
     - role: buluma.bootstrap
     - role: buluma.buildtools
     - role: buluma.epel
     - role: buluma.python_pip
+    - role: buluma.openssl
+      openssl_items:
+        - name: apache-httpd
+          common_name: "{{ ansible_fqdn }}"
+    - role: buluma.httpd
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -57,11 +52,11 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 ---
 # defaults file for ca
 
-# set ca_init: 'true' to create CA
+# set ca_init: 'yes' to create CA
 ca_init: true
 
-# ca_own_root: 'true' if you want to have yout own root CA.
-# if false, set ca_certificate_path manually
+# ca_own_root: 'yes' if you want to have yout own root CA.
+# if no, set ca_certificate_path manually
 ca_own_root: true
 
 # A passphrase for the CA key.
@@ -96,7 +91,7 @@ ca_locality_name: Nairobi
 
 # Where to publish the certificates, normally a webserver location.
 # If not specified, certificates will not be published.
-# {{ httpd_data_directory }} is inheritted from the role robertdebock.httpd.
+# {{ httpd_data_directory }} is inheritted from the role buluma.httpd.
 ca_publication_location: "{{ httpd_data_directory | default('/tmp') }}/pub"
 
 # Where do the certificates need to be stored? By default the distribution
@@ -137,7 +132,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|[EL](https://hub.docker.com/r/buluma/enterpriselinux)|8|
+|[EL](https://hub.docker.com/r/buluma/enterpriselinux)|8, 9|
 |[Debian](https://hub.docker.com/r/buluma/debian)|all|
 |[Fedora](https://hub.docker.com/r/buluma/fedora)|all|
 |[opensuse](https://hub.docker.com/r/buluma/opensuse)|all|
