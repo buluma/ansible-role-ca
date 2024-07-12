@@ -49,8 +49,6 @@ jobs:
       matrix:
         config:
           - image: "enterpriselinux"
-            tag: "8"
-          - image: "enterpriselinux"
             tag: "latest"
           - image: "docker-molecule-images"
             tag: "buster"
@@ -68,6 +66,10 @@ jobs:
             tag: "jammy"
           - image: "docker-molecule-images"
             tag: "focal"
+          - image: "docker-molecule-images"
+            tag: "noble"
+          - image: "docker-molecule-images"
+            tag: "lunar"
     steps:
       - name: Checkout Role
         uses: actions/checkout@v4
