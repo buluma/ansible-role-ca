@@ -12,7 +12,6 @@ on:
       - main
       - testing
       - dependabot/**
-      # - renovate/**
     paths-ignore:
       - '**/README.md'
       - '**/CHANGELOG.md'
@@ -21,8 +20,7 @@ on:
   pull_request:
   pull_request_target:
   schedule:
-    # - cron: '5 3 3 * *'
-    - cron: '5 3 * * *'
+    - cron: '5 3 3/3 * *'
 
   workflow_dispatch:
 
@@ -64,8 +62,6 @@ jobs:
             tag: "opensuse"
           - image: "docker-molecule-images"
             tag: "jammy"
-          - image: "docker-molecule-images"
-            tag: "focal"
           - image: "docker-molecule-images"
             tag: "noble"
           - image: "docker-molecule-images"
