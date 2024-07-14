@@ -16,7 +16,9 @@ galaxy_info:
         - all
     - name: Fedora
       versions:
-        - all
+        - "38"
+        - "39"
+        - "40"
     - name: opensuse
       versions:
         - all
@@ -24,7 +26,6 @@ galaxy_info:
       versions:
         - jammy
         - noble
-        - lunar
 
   galaxy_tags:
     - ca
