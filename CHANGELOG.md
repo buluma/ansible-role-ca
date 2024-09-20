@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Bump ansible/ansible-lint from 24.7.0 to 24.9.0 [\#28](https://github.com/buluma/ansible-role-ca/pull/28) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump dependabot/fetch-metadata from 1 to 2 [\#27](https://github.com/buluma/ansible-role-ca/pull/27) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#24](https://github.com/buluma/ansible-role-ca/pull/24) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#23](https://github.com/buluma/ansible-role-ca/pull/23) ([dependabot[bot]](https://github.com/apps/dependabot))
