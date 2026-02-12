@@ -41,6 +41,8 @@ jobs:
       matrix:
         distro:
           - image: "enterpriselinux"
+            tag: "8"
+          - image: "enterpriselinux"
             tag: "latest"
           - image: "docker-molecule-images"
             tag: "latest"
@@ -49,17 +51,13 @@ jobs:
           - image: "docker-molecule-images"
             tag: "bullseye"
           - image: "docker-molecule-images"
-            tag: "38"
-          - image: "docker-molecule-images"
-            tag: "39"
-          - image: "docker-molecule-images"
-            tag: "40"
+            tag: "latest"
           - image: "docker-molecule-images"
             tag: "opensuse"
           - image: "docker-molecule-images"
-            tag: "jammy"
-          - image: "docker-molecule-images"
             tag: "latest"
+          - image: "docker-molecule-images"
+            tag: "jammy"
     steps:
       - name: checkout
         uses: actions/checkout@v4
