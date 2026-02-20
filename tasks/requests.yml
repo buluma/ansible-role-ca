@@ -1,5 +1,4 @@
 ---
-
 - name: requests | Issue a key and certificate
   when:
     - (request.state is not defined) or (request.state == 'present')

@@ -1,5 +1,4 @@
 ---
-
 - name: init_ca | Ensure ca_path exists
   ansible.builtin.file:
     path: "{{ item }}"

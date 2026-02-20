@@ -1,5 +1,4 @@
 ---
-
 - name: assert | Test ca_passphrase
   ansible.builtin.assert:
     that:
