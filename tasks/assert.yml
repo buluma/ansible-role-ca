@@ -1,5 +1,4 @@
 ---
-
 - name: assert | Test ca_passphrase
   ansible.builtin.assert:
     that:
@@ -67,8 +66,7 @@
 - name: assert | Test item of ca_requests
   ansible.builtin.assert:
     that:
-      - item is string or
-        item is iterable
+      - item is string or item is iterable
       - item is not none
     quiet: true
   loop: "{{ ca_requests }}"

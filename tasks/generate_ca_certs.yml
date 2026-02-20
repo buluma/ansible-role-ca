@@ -1,5 +1,4 @@
 ---
-
 - name: generate_ca_certs | Set root CA path
   ansible.builtin.set_fact:
     ca_root_path: "{{ ca_path }}/rootCA"
