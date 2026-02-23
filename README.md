@@ -11,35 +11,33 @@ Install and configure a certificate authority on your system.
 This example is taken from [`molecule/default/converge.yml`](https://github.com/buluma/ansible-role-ca/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
 
 ```yaml
----
-- name: Converge
-  hosts: all
-  become: true
-  gather_facts: true
+  - name: Converge
+    hosts: all
+    become: true
+    gather_facts: true
 
-  roles:
-    - role: buluma.ca
+    roles:
+      - role: buluma.ca
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-ca/blob/master/molecule/default/prepare.yml):
 
 ```yaml
----
-- name: Prepare
-  hosts: all
-  become: true
-  gather_facts: false
+  - name: Prepare
+    hosts: all
+    become: true
+    gather_facts: false
 
-  roles:
-    - role: buluma.bootstrap
-    - role: buluma.buildtools
-    - role: buluma.epel
-    - role: buluma.python_pip
-    - role: buluma.openssl
-      openssl_items:
-        - name: apache-httpd
-          common_name: "{{ ansible_fqdn }}"
-    - role: buluma.httpd
+    roles:
+      - role: buluma.bootstrap
+      - role: buluma.buildtools
+      - role: buluma.epel
+      - role: buluma.python_pip
+      - role: buluma.openssl
+        openssl_items:
+          - name: apache-httpd
+            common_name: "{{ ansible_fqdn }}"
+      - role: buluma.httpd
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -49,7 +47,6 @@ Also see a [full explanation and example](https://buluma.github.io/how-to-use-th
 The default values for the variables are set in [`defaults/main.yml`](https://github.com/buluma/ansible-role-ca/blob/master/defaults/main.yml):
 
 ```yaml
----
 # defaults file for ca
 
 # set ca_init: 'yes' to create CA
@@ -98,7 +95,8 @@ ca_publication_location: "{{ httpd_data_directory | default('/tmp') }}/pub"
 # preferred locations are used (see `vars/main.yml`, under `_ca_openssl_path`.
 # If you need a CA certificate somewhere else, simple use something like this:
 # ca_openssl_path: /my/preferred/path
-ca_openssl_path: "{{ _ca_openssl_path[ansible_os_family] | default(_ca_openssl_path['default']) }}"
+ca_openssl_path: "{{ _ca_openssl_path[ansible_os_family] | default(_ca_openssl_path['default'])
+  }}"
 ```
 
 ## [Requirements](#requirements)
