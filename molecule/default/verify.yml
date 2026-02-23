@@ -1,29 +1,29 @@
 ---
-  - name: Verify
-    hosts: all
-    become: true
-    gather_facts: true
+- name: Verify
+  hosts: all
+  become: true
+  gather_facts: true
 
-    roles:
-      - role: buluma.ca
-        ca_openssl_path: /ca
-        ca_common_name: example.com
-        ca_requests:
-          - "{{ ansible_fqdn }}"
-          - name: my_ca.example.com
-            passphrase: WoNtT3L1
-            cipher: aes256
-            country_name: KE
-            email_address: me@buluma.me.ke
-            organization_name: Some Corporation
-            organizational_unit_name: Department X
+  roles:
+  - role: buluma.ca
+    ca_openssl_path: /ca
+    ca_common_name: example.com
+    ca_requests:
+    - "{{ ansible_fqdn }}"
+    - name: my_ca.example.com
+      passphrase: WoNtT3L1
+      cipher: aes256
+      country_name: KE
+      email_address: me@buluma.me.ke
+      organization_name: Some Corporation
+      organizational_unit_name: Department X
 
-    post_tasks:
-      - name: Check if key exists
-        ansible.builtin.stat:
-          path: "{{ item }}"
-        loop:
-          - /ca/example.com/certs/my_ca.example.com.crt
-        register: ca_check_key
-        failed_when:
-          - not ca_check_key.stat.exists
+  post_tasks:
+  - name: Check if key exists
+    ansible.builtin.stat:
+      path: "{{ item }}"
+    loop:
+    - /ca/example.com/certs/my_ca.example.com.crt
+    register: ca_check_key
+    failed_when:
+    - not ca_check_key.stat.exists
