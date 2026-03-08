@@ -5,12 +5,12 @@
   gather_facts: false
 
   roles:
-  - role: buluma.bootstrap
-  - role: buluma.buildtools
-  - role: buluma.epel
-  - role: buluma.python_pip
-  - role: buluma.openssl
-    openssl_items:
-    - name: apache-httpd
-      common_name: "{{ ansible_fqdn }}"
-  - role: buluma.httpd
+    - role: buluma.bootstrap
+    - role: buluma.buildtools
+    - role: buluma.epel
+    - role: buluma.python_pip
+    - role: buluma.openssl
+      openssl_items:
+        - name: apache-httpd
+          common_name: "{{ ansible_fqdn }}"
+    - role: buluma.httpd
