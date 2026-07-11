@@ -30,6 +30,13 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
   become: true
   gather_facts: false
 
+  pre_tasks:
+    - name: Install sudo if missing
+      ansible.builtin.raw: "{{ ansible_pkg_mgr | default('dnf') }} install -y sudo"
+      become: false
+      changed_when: false
+      failed_when: false
+
   roles:
     - role: buluma.bootstrap
     - role: buluma.buildtools
@@ -38,7 +45,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
     - role: buluma.openssl
       openssl_items:
         - name: apache-httpd
-          common_name: "{{ ansible_fqdn }}"
+          common_name: "{{ ansible_facts['fqdn'] }}"
     - role: buluma.httpd
 ```
 
@@ -81,13 +88,13 @@ ca_locality_name: Nairobi
 #
 # 2. Without details: (Does not include `name:`)
 # ca_requests:
-#   - "{{ ansible_fqdn }}"
+#   - "{{ ansible_facts['fqdn'] }}"
 
 # You can also mix these formats:
 # ca_requests:
 #   - name: certificate1.example.com
 #     passphrase: S3creT
-#   - "{{ ansible_fqdn }}"
+#   - "{{ ansible_facts['fqdn'] }}"
 
 # Where to publish the certificates, normally a webserver location.
 # If not specified, certificates will not be published.
@@ -98,7 +105,7 @@ ca_publication_location: "{{ httpd_data_directory | default('/tmp') }}/pub"
 # preferred locations are used (see `vars/main.yml`, under `_ca_openssl_path`.
 # If you need a CA certificate somewhere else, simple use something like this:
 # ca_openssl_path: /my/preferred/path
-ca_openssl_path: "{{ _ca_openssl_path[ansible_os_family] | default(_ca_openssl_path['default']) }}"
+ca_openssl_path: "{{ _ca_openssl_path[ansible_facts['os_family']] | default(_ca_openssl_path['default']) }}"
 ```
 
 ## [Requirements](#requirements)
@@ -128,14 +135,14 @@ Here is an overview of related roles:
 
 ## [Compatibility](#compatibility)
 
-This role has been tested on these [container images](https://hub.docker.com/u/robertdebock):
+This role has been tested on these [container images](https://hub.docker.com/u/buluma):
 
 |container|tags|
 |---------|----|
-|[EL](https://hub.docker.com/r/robertdebock/enterpriselinux)|all|
-|[Debian](https://hub.docker.com/r/robertdebock/debian)|all|
-|[Fedora](https://hub.docker.com/r/robertdebock/fedora)|all|
-|[Ubuntu](https://hub.docker.com/r/robertdebock/ubuntu)|all|
+|[EL](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Debian](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Fedora](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Ubuntu](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
 
 The minimum version of Ansible required is 2.12, tests have been done on:
 
@@ -153,6 +160,3 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 
 [buluma](https://buluma.github.io/)
 
-### Get Help
-- Report issues: https://github.com/buluma/ansible-role-ca/issues/new
-- See docs: https://docs.ansible.com/collection/gallery/ansible-role-ca
